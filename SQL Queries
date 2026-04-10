@@ -1,0 +1,90 @@
+1) Database  --> CREATE DATABASE db_world;
+
+2) Schema -->   CREATE SCHEMA student_db;
+
+3) Table --> CREATE TABLE STUDENTS(id INT PRIMARY KEY, name VARCHAR(50), age INT)
+
+2) Insertion a row -->  
+   INSERT INTO students values(1, 'Viren', 34);
+   
+INSERT INTO students values(2, 'Ravi', 24);
+INSERT INTO students values(3, 'Kavita', 28);
+INSERT INTO students values(4, 'Tarun', 34);
+
+4) ALTER: 
+
+ALTER TABLE students ADD email VARCHAR(100);
+
+5) RENAME:
+RENAME TABLE students TO college_students;
+
+6) UPDATE:
+UPDATE  COLLEGE_STUDENTS
+SET email = 'viren@yahoo.com'
+WHERE id=1;
+
+7) DELETE:
+DELETE FROM students 
+where id=4;
+
+create table employees(emp_id int primary key, emp_name varchar(50), salary int, department varchar(50));
+
+(1)  COUNT:
+select COUNT(*) AS total_employees FROM EMPLOYEES;
+
+(2) SUM:
+select SUM(salary) AS total_salary FROM EMPLOYEES;
+
+
+BETWEEN:
+select * from employees where salary BETWEEN 50000 AND 65000
+
+select * from employees WHERE department = 'HR' OR salary < 50000
+
+GROUP BY:
+SELECT department, COUNT(*)
+FROM employees
+GROUP BY department
+
+ASC  OR   DESC
+
+CONCAT:
+
+SELECT CONCAT(emp_name, ' works in ', department) as INFO
+from employees;
+
+give me total_salary earned by each departmnet
+
+create table  departments (
+dept_id INT PRIMARY KEY, dept_name varchar(50));
+
+KEYWORDS IN UPPERCASE BELOW:
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+TABLE_NAME
+BETWEEN
+SUM
+AVG
+MIN
+MAX
+COUNT
+AS 
+TABLE
+
+remove column:
+ALTER TABLE employees DROP COLUMN department;
+
+INSERT INTO departments values (101, 'IT');
+INSERT INTO departments values (102, 'HR');
+INSERT INTO departments values (103, 'Sales');
+INSERT INTO departments values (104, 'Marketing');
+
+
+UPDATE employees SET dept_id=101 where empid=1
+
+
+
+
