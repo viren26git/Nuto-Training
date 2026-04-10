@@ -11,6 +11,21 @@ INSERT INTO students values(2, 'Ravi', 24);
 INSERT INTO students values(3, 'Kavita', 28);
 INSERT INTO students values(4, 'Tarun', 34);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4) ALTER: 
 
 ALTER TABLE students ADD email VARCHAR(100);
@@ -22,6 +37,7 @@ RENAME TABLE students TO college_students;
 UPDATE  COLLEGE_STUDENTS
 SET email = 'viren@yahoo.com'
 WHERE id=1;
+
 
 7) DELETE:
 DELETE FROM students 
@@ -53,12 +69,15 @@ CONCAT:
 SELECT CONCAT(emp_name, ' works in ', department) as INFO
 from employees;
 
+
 give me total_salary earned by each departmnet
+
+
 
 create table  departments (
 dept_id INT PRIMARY KEY, dept_name varchar(50));
 
-KEYWORDS IN UPPERCASE BELOW:
+
 SELECT
 FROM
 WHERE
@@ -83,7 +102,43 @@ INSERT INTO departments values (103, 'Sales');
 INSERT INTO departments values (104, 'Marketing');
 
 
-UPDATE employees SET dept_id=101 where empid=1
+UPDATE employees SET dept_id=102 where emp_id=2;
+UPDATE employees SET dept_id=103 where emp_id=3;
+UPDATE employees SET dept_id=102 where emp_id=4;
+UPDATE employees SET dept_id=104 where emp_id=5;
+
+
+SELECT e.emp_name
+FROM  employees e, departments d
+WHERE e.dept_id = d.dept_id 
+AND d.dept_name IN ('Sales','HR')
+AND e.salary BETWEEN 50000 AND 70000
+ORDER BY e.emp_name DESC
+
+
+give query to return all thos employees who are working in HR and marketing
+
+
+2) give query to display employee names working in  Sales and HR only but whose salary is between 50k -70k and show the emp names in DESC ORDER
+Solution:
+mysql> SELECT e.emp_name
+    -> FROM  employees e, departments d
+    -> WHERE e.dept_id = d.dept_id
+    -> AND d.dept_name IN ('Sales','HR')
+    -> AND e.salary BETWEEN 50000 AND 70000
+    -> ORDER BY e.emp_name DESC;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
